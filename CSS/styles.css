@@ -60,3 +60,46 @@
     transform: translateY(-1px);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.opcion-dashboard .card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.opcion-dashboard .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.opcion-dashboard .card-title {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.opcion-dashboard .card-text {
+    color: #666;
+}
+
+#dashboard {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+#dashboard .card-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#opcionesContainer {
+    padding: 1rem;
+}
+
+/* Asegurarse de que los iconos sean lo suficientemente grandes */
+.opcion-dashboard .card-title {
+    font-size: 1.2rem;
+}
+
+.opcion-dashboard .card-title br {
+    margin: 0.5rem 0;
+}
