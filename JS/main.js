@@ -161,7 +161,7 @@ class SistemaLogin {
         }
     }
 
-    // --- MENÚ CON PESTAÑAS ---
+    
     mostrarDashboard() {
         // Oculta el login y muestra el dashboard con el menú de pestañas
         const loginContainer = document.getElementById('loginContainer');
@@ -185,7 +185,7 @@ class SistemaLogin {
             <div id="contenidoTabs" class="mt-3"></div>
         `;
 
-        // Reasignamos el evento de logout (ya que se reemplazó el contenido)
+    
         document.getElementById('btnLogout').addEventListener('click', () => {
             this.logout();
         });
@@ -204,7 +204,6 @@ class SistemaLogin {
             this.mostrarGestionEstudios();
         });
 
-        // Por defecto, mostramos la lista de pacientes
         this.mostrarListaPacientesEnHTML();
     }
 
@@ -267,7 +266,7 @@ class SistemaLogin {
         });
     }
 
-    // Asignar evento a cada botón de "Modificar"
+    // Evento a cada botón de "Modificar"
     const modificarButtons = container.querySelectorAll('.modificar-doctor');
     modificarButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -322,7 +321,6 @@ class SistemaLogin {
     const doctor = this.doctores.find(d => d.mp === mp);
     if (!doctor) return;
 
-    // En este ejemplo, se asume que el MP es único y no se modifica (se muestra en readOnly)
     Swal.fire({
         title: 'Modificar Doctor',
         html: `
@@ -354,7 +352,6 @@ class SistemaLogin {
 
 
     mostrarListaPacientesEnHTML() {
-    // Utilizamos el contenedor de la pestaña
     const container = document.getElementById('contenidoTabs') || document.getElementById('listaPacientesContainer');
     if (!container) return;
 
@@ -462,7 +459,6 @@ class SistemaLogin {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.isConfirmed) {
-            // Filtramos el paciente a eliminar
             this.pacientes = this.pacientes.filter(p => p.id !== pacienteId);
             this.guardarPacientes();
             Swal.fire('Eliminado!', 'El paciente ha sido eliminado.', 'success')
